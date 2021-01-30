@@ -28,19 +28,11 @@ const findUlRef = document.querySelector('#gallery');
 const imageRef = images.map(image => {
   const createLi = document.createElement('li');
 
-  //const createImg = document.createElement('img');
-  createLi.insertAdjacentHTML('afterbegin', `<img src=${image.url}> </img>`);
-  //createLi.insertAdjacentHTML('beforeend', `<img alt:${image.alt}>`);
-  createLi.insertAdjacentHTML('beforeend', '<img width=200></img>');
-  //const findImgRef = document.querySelector('img');
-  //findImgRef.setAttribute('width', '200');
-  //findImgRef.setAttribute('height', '200');
-  //createLi.append(createImg);
+  createLi.insertAdjacentHTML(
+    'afterbegin',
+    `<img width=200 src=${image.url} alt=${image.alt}>`,
+  );
   return createLi;
 });
 
-console.dir(imageRef);
-
 findUlRef.append(...imageRef);
-
-console.log(findUlRef);
