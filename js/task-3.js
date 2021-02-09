@@ -23,16 +23,22 @@ const images = [
   },
 ];
 
-const findUlRef = document.querySelector('#gallery');
+// const findUlRef = document.querySelector('#gallery');
 
-const imageRef = images.map(image => {
-  const createLi = document.createElement('li');
+// const imageRef = images.map(image => {
+//   const createLi = document.createElement('li');
 
-  createLi.insertAdjacentHTML(
-    'afterbegin',
-    `<img width=200 src=${image.url} alt=${image.alt}>`,
-  );
-  return createLi;
-});
+//   createLi.insertAdjacentHTML(
+//     'afterbegin',
+//     `<img width=200 src=${image.url} alt=${image.alt}>`,
+//   );
+//   return createLi;
+// });
 
-findUlRef.append(...imageRef);
+// findUlRef.append(...imageRef);
+const strToInsert = images.reduce((acc, img) => {
+  img = `<li><img width=200  src="${img.url}" alt="${img.alt}"></li>`;
+  return (acc += img);
+}, '');
+
+gallery.insertAdjacentHTML('afterbegin', strToInsert);

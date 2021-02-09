@@ -14,7 +14,7 @@ findInput.addEventListener('blur', changeFocus);
 function changeFocus(event) {
   const validLengthRef = Number(findInput.getAttribute('data-length'));
   const valueInputRef = event.target.value;
-  return valueInputRef.length === validLengthRef
+  valueInputRef.length === validLengthRef
     ? findInput.classList.add('valid')
     : findInput.classList.add('invalid');
 }

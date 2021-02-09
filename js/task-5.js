@@ -10,6 +10,21 @@ const refs = {
 refs.input.addEventListener('input', onInputChange);
 
 function onInputChange(event) {
-  console.log(event.currentTarget.value);
-  refs.output.textContent = event.currentTarget.value;
+  refs.output.textContent !== ''
+    ? (refs.output.textContent = event.currentTarget.value)
+    : (refs.output.textContent = 'незнакомец');
 }
+
+//Через remove снять слушателя и вернуть "незнакомец"
+//  console.log(event.currentTarget.value);
+//  refs.output.textContent = event.currentTarget.value;
+
+// const inputForm = document.querySelector('input');
+// const spanString = document.querySelector('#name-output');
+
+// const changeSpan = () =>
+//   inputForm.value !== ''
+//     ? (spanString.textContent = inputForm.value)
+//     : (spanString.textContent = 'незнакомец');
+
+// inputForm.addEventListener('input', changeSpan);

@@ -13,7 +13,7 @@ const ulRef = document.querySelector('ul').children.length;
 console.log(`В списке ${ulRef} категории`);
 
 const items = document.querySelectorAll('.item');
-items.forEach.call(items, element => {
+items.forEach(element => {
   const title = element.querySelector('h2').innerHTML;
   const itemsLength = element.querySelectorAll('li').length;
   console.log(`Категория: ${title}`);
